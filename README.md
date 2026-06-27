@@ -33,9 +33,13 @@ echo 2 | sudo tee /sys/devices/platform/hp-wmi/hwmon/hwmon*/pwm1_enable
 ---
 * Manual mode is not working in my laptop
 Because firmware (BIOS + Embedded Controller) does not expose the manual fan-control interface that the hp-wmi driver needs it rejects always maybe it works in future after new BIOS update
+
+Turn on Manual Mode
 ```
 echo 1 | sudo tee /sys/devices/platform/hp-wmi/hwmon/hwmon*/pwm1_enable
-
+```
+Choose speed in RPM
+```
 echo 4000 | sudo tee /sys/devices/platform/hp-wmi/hwmon/hwmon*/fan1_target
 ```
 
